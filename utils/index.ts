@@ -2,7 +2,7 @@ import { CarProps } from "@/types";
 
 export async function fetchCars() {
   const headers = {
-    'X-RapidAPI-Key': '43ffd2491dmsh415142f0db4aec1p1b9cefjsnb883494b853c',
+    'X-RapidAPI-Key': 'nPcVM6PS8u8vjku+gHQnHg==TBhifDSiDU8dao6k',
     'X-RapidAPI-Host': 'cars-by-api-ninjas.p.rapidapi.com'
   }
 
@@ -30,10 +30,10 @@ export const calculateCarRent = (city_mpg: number, year: number) => {
 };
 
 export const generateCarImageUrl = (car: CarProps, angle?: string) => {
-  const url = new URL('https://all-cars-names-image-and-variants-info.p.rapidapi.com/motororchestrator/api/v1/mmv');
+  const url = new URL('https://api.api-ninjas.com/v1/cars?model=');
   const { make, model, year } = car;
 
-  url.searchParams.append('customer', '43ffd2491dmsh415142f0db4aec1p1b9cefjsnb883494b853c');
+  url.searchParams.append('customer', 'nPcVM6PS8u8vjku+gHQnHg==TBhifDSiDU8dao6k');
   url.searchParams.append('make', make);
   url.searchParams.append('modelFamily', model.split(" ")[0]);
   url.searchParams.append('zoomType', 'fullscreen');
@@ -43,3 +43,4 @@ export const generateCarImageUrl = (car: CarProps, angle?: string) => {
 
   return `${url}`;
 } 
+  
